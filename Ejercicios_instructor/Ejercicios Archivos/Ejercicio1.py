@@ -4,7 +4,8 @@ while True:
     2. Ingresar informacion a un archivo
     3. Ver cuantas lineas contiene un archivo
     4. Leer informacion que contenga un archivo
-    5. Salir
+    5. Crear archivo de datos personales
+    6. Salir
     """)
     opcion = int (input("Ingrese el numero de la opcion que desea realizar: "))
     
@@ -12,6 +13,7 @@ while True:
 
         def crearArchivo (nomArchivo):
             try:
+                nomArchivo = input("Ingrese el nombre del archivo: ")
                 archivo = open (f"C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\{nomArchivo}", "x")
                 print ("El archivo se creo exitosamente")
                 archivo.close ()
@@ -70,5 +72,39 @@ while True:
         leerArchivo (archivo4)
 
     if opcion == 5:
+
+        def infoPersonal (nomArchivo):
+            try:
+                archivo = open (f"C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\{nomArchivo}", "x")
+                archivo = open (f"C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\{nomArchivo}", "a")
+                nombre = input ("Ingrese su nombre completo: ")
+                edad = int(input("Ingrese cuantos años tiene: "))
+                print ("""Indique su tipo de sexo:
+1. Masculino
+2. Femenino
+3. Otro""")
+                sexo = int(input ("Ingrese el numero que va acorde a su sexo: "))
+                if sexo == 1:
+                    sexo = "Masculino"
+                if sexo == 2:
+                    sexo = "Femenino"
+                if sexo == 3:
+                    sexo = "Otro"
+                ciudad = input ("Ingrese la ciudad en la que vive: ")
+                archivo.write (f"""DATOS PERSONALES\n
+Nombre completo: {nombre}
+Edad: {edad}
+Sexo: {sexo}
+Ciudad: {ciudad}""")
+                archivo.close ()
+            except FileExistsError:
+                print ("El archivo que intento crear ya existe")
+            except ValueError:
+                print ("Usted ingreso un dato no numerico")
+
+        archivo5 = input ("Ingrese el nombre del archivo: ")
+        infoPersonal (archivo5)
+
+    if opcion == 6:
         print ("\nHASTA PRONTO\n")
         break
