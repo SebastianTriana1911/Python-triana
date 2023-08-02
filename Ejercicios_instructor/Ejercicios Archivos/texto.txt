@@ -1,5 +1,0 @@
-nose 
-que 
-colocar 
-nuevo 
-nose 

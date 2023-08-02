@@ -5,7 +5,8 @@ while True:
     3. Ver cuantas lineas contiene un archivo
     4. Leer informacion que contenga un archivo
     5. Crear archivo de datos personales
-    6. Salir
+    6. Contar caracteres de un archivo
+    7. Salir
     """)
     opcion = int (input("Ingrese el numero de la opcion que desea realizar: "))
     
@@ -13,7 +14,6 @@ while True:
 
         def crearArchivo (nomArchivo):
             try:
-                nomArchivo = input("Ingrese el nombre del archivo: ")
                 archivo = open (f"C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\{nomArchivo}", "x")
                 print ("El archivo se creo exitosamente")
                 archivo.close ()
@@ -30,12 +30,17 @@ while True:
                 archivo2 = open (f"C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\{nomArchivo}", "a")
                 cont = 0
                 lineas = int(input ("Ingrese cuantos saltos de linea desea realizar: "))
-                for i in range (lineas):
-                    cont = cont + 1
-                    texto = input (f"Ingrese lo que desea añadir en la linea {cont}: ")
-                    archivo2.write (f"{texto} \n")
-                print ("\nLo que ingreso fue adjuntado al archivo exitosamente")
-                archivo2.close()
+                if lineas < 0:
+                    raise Exception
+                else: 
+                    for i in range (lineas):
+                        cont = cont + 1
+                        texto = input (f"Ingrese lo que desea añadir en la linea {cont}: ")
+                        archivo2.write (f"{texto} \n")
+                    print ("\nLo que ingreso fue adjuntado al archivo exitosamente")
+                    archivo2.close()
+            except Exception:
+                print ("Tiene que ingresar un numero y que sea mayor de 0")
             except:
                 print ("Error en la ejecucion del codigo")
 
@@ -106,5 +111,23 @@ Ciudad: {ciudad}""")
         infoPersonal (archivo5)
 
     if opcion == 6:
+
+        try: 
+            def contarCaracter (nomArchivo):
+                archivo = open (f"C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\{nomArchivo}", "r")
+                cont = 0
+                for lineas in archivo:
+                    for letra in lineas:
+                        if letra != " ":
+                            cont = cont + 1
+                archivo.close ()   
+                print (f"En el archivo se encuentran {cont} caracteres")
+        except FileExistsError:
+            print ("EL archivo ya existe") 
+        
+        archivo6 = input ("Ingrese el nombre del archivo: ")
+        contarCaracter (archivo6)
+
+    if opcion == 7:
         print ("\nHASTA PRONTO\n")
         break
