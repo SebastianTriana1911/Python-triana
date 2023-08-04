@@ -1,0 +1,4 @@
+El documento que mas se repite en las pruebas saber 11 fue: TI
+En la prueba Saber 11 predomino el sexo MASCULINO (M)
+El departamento con mas estudiantes de la prueba Saber 11 fue BOGOTA
+El promedio de personas que presentaron la prueba a Saber 11 son de estrato 2

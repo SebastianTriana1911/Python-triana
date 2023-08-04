@@ -1,4 +1,4 @@
-
+# READLINE
 archivo = open ('C:\\Triana\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\himno.txt', "r", encoding= "utf-8")
 cont = 0
 linea = archivo.readline ()
@@ -8,6 +8,7 @@ while linea != "":
     linea = archivo.readline ()
 archivo.close()
 
+# READLINES
 archivo = open ('C:\\Triana\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\himno.txt', "r", encoding= "utf-8")
 cont = 0
 for linea in archivo.readlines():
