@@ -1,7 +1,8 @@
 # Llenar un arreglo con la serie de Fibonacci, con la cantidad de dígitos que el usuario indique al inicio del 
 # programa.
-lista1 = []
-def fibonacci (lista):
+
+def fibonacci ():
+    lista1 = []
     result = 0
     numero_final = int(input("Ingrese en numero que indique el final de la lista: "))
     num1 = 0
@@ -10,7 +11,9 @@ def fibonacci (lista):
         result = num1 + num2
         num1 = num2
         num2 = result
-        lista.append(result)
-    return f"{lista}"
-print(fibonacci(lista1))
+        lista1.append(result)
+    return f"{lista1}"
+lista = fibonacci()
+
+print (lista)
 
