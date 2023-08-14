@@ -97,12 +97,15 @@ Email - {datos[3]}
     if opcion != 1 or 2 or 3 or 4 or 5 or 6:
         print ("Usted escribio un dato erroneo")
 
-
+# Se crea un metodo para eliminar un registro de una tabla
 def deleteDatos ():
+    # Se pide el documento que es la llave primaria la que identifica cada registro
     documento = input ("Ingrese el documento de la persona que desea eliminar: ")
+    # Se crea la consulta donde se dice que elimine de la tabla personas la persona
+    # Donde el documento sea el valor de la variable documeto
     consulta = "DELETE FROM personas WHERE documento = %s"
     valor = (documento, )
+    # Se guarda la consulta con el valor en la variable cursor
     cursor.execute(consulta, valor)
+    # Se envia la consulta realizada a la base de datos
     bd.commit ()
-
-selectDatos ()

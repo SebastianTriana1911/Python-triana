@@ -1,3 +1,6 @@
+# La unica diferencia de tratar con with open es que a la hora de abrir un directorio se le tiene que pasar un alias que corresponde "A la variable"
+# De esa manera se podra manipular dicho archivo, de resto es la misma explicacion del modulo "Archivo Open"
+
 while True:
     print ("""\nOpciones que puede realiza\n
     1. Crear un archivo

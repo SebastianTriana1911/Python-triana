@@ -1,11 +1,25 @@
+# Se importa el modulo personas que es la que contiene la clase de los atributos que se desea ver
 from persona import *
+# Se importa csv para la manipulacion y creacion de archivos csv
 import csv
 
+# Se crea una lista que sea variable de clase
 personas = []
+# Se abre el archivo con la palabra reservada with seguida del open mas la ruta de donde esta el archivo
+# Que se desea abrir, y se le pone la palabra (encondig = "utf-8") que es la que permite que el archivo
+# Permita caracteres españoles, y se le añade un alias con la palabra as y el nombre que se desea utiliza 
+# Para manipular
 with open ("C:\\Users\\Sebastian\\OneDrive\\Escritorio\\Clone\\pythontriana\\Ejercicios_instructor\\Ejercicios Archivos\\Saber_11.csv", encoding= "utf-8" ) as archivo:
+    # A una variable llamada saber se le asigna el csv.reader pasando como parametro el alias que le colocamos
+    # Al archivo csv que abrimos, el csv.reader permite iterar cada linea del documento que le pasemos como 
+    # Parametro
     saber = csv.reader (archivo)
+    # Para iterar de una forma correcta la variable saber que es la que contiene el archivo iterable lo hacemos con
+    # Un for y se instancia una variable llamada persona1 de la clase persona, donde se le pasa como parametro la
+    # Iteracion del archivo saber en dichas posiciones
     for row in saber:
         persona1 = Persona(row[0], row[2], row[10], row[14])
+        # Cada instancia de personas se agrega a la variable de clases
         personas.append(persona1)
 
 # Hallar la moda de la lista documentos
