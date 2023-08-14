@@ -1,4 +1,6 @@
 # TRY - EXCEPT
+
+
 try:
     num1 = int (input ("Ingrese un numero: "))
     if num1 < 0:
