@@ -8,5 +8,5 @@ longitud = random.randrange (5,15)
 
 for i in range (longitud):
     numeros = random.randrange (1,100)
-    tupla = tupla + (numeros,)
+    tupla = tupla + (numeros, )
 print(tupla)
